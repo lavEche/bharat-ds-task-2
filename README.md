@@ -1,5 +1,6 @@
 # Titanic Classification System
-![Uploading image.png…]()
+![image](https://github.com/lavEche/bharat-ds-task-2/assets/124572155/d42557ed-f295-4826-a30b-8fb66d93a03d)
+
 
 Overview
 The Titanic Classification System is a machine learning project that predicts whether a passenger on the Titanic would have survived or not, based on various features such as socio-economic status, age, gender, and more. This README provides an overview of the project, its structure, and how to use it.
