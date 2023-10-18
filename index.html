@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin: 0;
+            padding: 10px 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 5px 0;
+        }
+        select, input {
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Titanic Survival Prediction</h1>
+       
+        <form id="predictionForm">
+            <label for="pclass">Pclass (1st/2nd/3rd class):</label>
+            <input type="number" id="pclass" min="1" max="3">
+            <label for="sex">Sex (0 for male, 1 for female):</label>
+            <input type="number" id="sex" min="0" max="1">
+            <label for="age">Age:</label>
+            <input type="number" id="age">
+            <label for="sibsp">Siblings/Spouses Aboard:</label>
+            <input type="number" id="sibsp">
+            <label for="parch">Parents/Children Aboard:</label>
+            <input type="number" id="parch">
+            <label for="fare">Fare:</label>
+            <input type="number" id="fare">
+            <button type="button" onclick="predictSurvival()">Predict Survival</button>
+        </form>
+        <div class="result" id="predictionResult" style="display: none;"></div>
+
+        <script>
+            function predictSurvival() {
+                const pclass = parseInt(document.getElementById("pclass").value);
+                const sex = parseInt(document.getElementById("sex").value);
+                const age = parseFloat(document.getElementById("age").value);
+                const sibsp = parseInt(document.getElementById("sibsp").value);
+                const parch = parseInt(document.getElementById("parch").value);
+                const fare = parseFloat(document.getElementById("fare").value);
+
+                // Implement your machine learning model or prediction logic here
+                // For simplicity, we'll simulate a prediction based on age and gender.
+                const isSurvived = age < 18 || (age < 50 && sex === 1); // Example logic
+
+                const predictionResultElement = document.getElementById("predictionResult");
+                predictionResultElement.style.display = "block";
+                if (isSurvived) {
+                    predictionResultElement.innerHTML = "Prediction Result: Survived";
+                } else {
+                    predictionResultElement.innerHTML = "Prediction Result: Not Survived";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
